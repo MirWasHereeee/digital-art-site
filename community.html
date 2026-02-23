@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- Navigation structure inspired by common multi-page website layouts -->
+<nav style="background:#376b2a; padding:12px;">
+    <a href="index.html" style="color:white; margin-right:20px;">Home</a>
+    <a href="software.html" style="color:white; margin-right:20px;">Software & Tools</a>
+    <a href="platform.html" style="color:white; margin-right:20px;">Platforms</a>
+    <a href="community.html" style="color:white;">Join the Community</a>
+</nav>
+
+    <style>
+
+        a:hover {
+    text-decoration: underline;
+    color: #2c5f1a;
+}
+
+input[type="submit"]:hover {
+    background-color: #376b2a;
+    color: white;
+}
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 10px;
+            line-height: 1.6;
+        }
+
+        h1 {
+            color: #376b2a;
+        }
+
+        h2 {
+            color: #70b45f;
+        }
+
+        img {
+            width: 300px;
+            margin: 10px 0;
+        }
+
+        form {
+            background-color: white;
+            padding: 15px;
+            border-radius: 8px;
+            width: 420px;
+        }
+
+        input, select {
+            margin-bottom: 10px;
+            width: 100%;
+            padding: 6px;
+        }
+
+        input[type="radio"],
+        input[type="checkbox"] {
+            width: auto;
+        }
+    </style>
+</head>
+    <h2>Join the Digital Art Community</h2>
+
+    <form action="#" method="post">
+
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" placeholder="example@email.com" required>
+
+        <label for="password">Create Password:</label>
+        <input type="password" id="password" name="password" minlength="6" required>
+
+        <label for="experience">Years of Experience (0-50):</label>
+        <input type="number" id="experience" name="experience" min="0" max="50">
+
+        <p>Skill Level:</p>
+        <input type="radio" name="level" value="beginner" required> Beginner<br>
+        <input type="radio" name="level" value="intermediate"> Intermediate<br>
+        <input type="radio" name="level" value="advanced"> Advanced<br>
+        <input type="radio" name="level" value="expert"> Expert<br><br>
+
+        <p>Software You Use:</p>
+        <input type="checkbox" name="software" value="procreate"> Procreate<br>
+        <input type="checkbox" name="software" value="photoshop"> Photoshop<br>
+        <input type="checkbox" name="software" value="clip-studio"> Clip Studio Paint<br>
+        <input type="checkbox" name="software" value="krita"> Krita<br>
+        <input type="checkbox" name="software" value="gimp"> GIMP<br>
+        <input type="checkbox" name="software" value="sketchbook"> Autodesk SketchBook<br>
+        <input type="checkbox" name="software" value="corel"> Corel Painter<br>
+      
+        <p>Platforms You Use:</p>
+        <input type="checkbox" name="platform" value="instagram"> Instagram<br>
+        <input type="checkbox" name="platform" value="tiktok"> TikTok<br>
+        <input type="checkbox" name="platform" value="twitter"> Twitter/X<br>
+        <input type="checkbox" name="platform" value="bluesky"> Bluesky<br>
+        <input type="checkbox" name="platform" value="youtube"> YouTube<br>
+        <input type="checkbox" name="platform" value="tumblr"> Tumblr<br>
+        <input type="checkbox" name="platform" value="pinterest"> Pinterest<br>
+        <input type="checkbox" name="platform" value="pixiv"> Pixiv<br>
+        <input type="checkbox" name="platform" value="newgrounds"> Newgrounds<br>
+        <input type="checkbox" name="platform" value="behance"> Behance<br>
+        <input type="checkbox" name="platform" value="deviantart"> DeviantArt<br>
+        <input type="checkbox" name="platform" value="artstation"> ArtStation<br><br>
+
+        <p>Other Software You Use (Optional):</p>
+        <input type="text" name="other_software" placeholder="Type other software here">
+
+        <p>Other Platforms You Use (Optional):</p>
+        <input type="text" name="other_platforms" placeholder="Type other platforms here">
+
+        <input type="submit" value="Submit">
+
+    </form>
+
+</body>
+</html>

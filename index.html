@@ -1,11 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Introduction to Digital Art</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Navigation structure inspired by common multi-page website layouts -->
+<nav style="background:#376b2a; padding:12px;">
+    <a href="index.html" style="color:white; margin-right:20px;">Home</a>
+    <a href="software.html" style="color:white; margin-right:20px;">Software & Tools</a>
+    <a href="platform.html" style="color:white; margin-right:20px;">Platforms</a>
+    <a href="community.html" style="color:white;">Join the Community</a>
+</nav>
 
     <style>
+
+        a:hover {
+    text-decoration: underline;
+    color: #2c5f1a;
+}
+
+input[type="submit"]:hover {
+    background-color: #376b2a;
+    color: white;
+}
         body {
             font-family: Arial, sans-serif;
             background-color: #f2f2f2;
@@ -48,6 +63,7 @@
 
 <body>
 
+
     <h1>Introduction to Digital Art</h1>
 
     <img src="https://cdn.mos.cms.futurecdn.net/V9mhxs7dovfyY8WXTCUQdJ-650-80.jpg.webp" 
@@ -63,130 +79,6 @@
         Many creators love digital art because it is <em>flexible, efficient,</em> 
         and constantly evolving. With the right tools, <u>anyone can begin creating</u>.
     </p>
-
-    <h2>Popular Digital Art Software</h2>
-
-    <p>
-        • <a href="https://procreate.com/" target="_blank">Procreate</a> – A powerful and beginner-friendly iPad drawing app.
-    </p>
-
-    <p>
-        • <a href="https://www.clipstudio.net/en/" target="_blank">Clip Studio Paint</a> – Widely used for comics, manga, and illustration.
-    </p>
-
-    <p>
-        • <a href="https://www.adobe.com/products/photoshop.html" target="_blank">Adobe Photoshop</a> – Industry-standard software for digital illustration and design.
-    </p>
-
-    <p>
-        • <a href="https://krita.org/en/" target="_blank">Krita</a> – Free, powerful, and very popular among indie and beginner artists.
-    </p>
-
-    <p>
-        • <a href="https://www.gimp.org/" target="_blank">GIMP</a> – Good free alternative for photo editing and basic illustration work.
-    </p>
-
-    <p>
-        • <a href="https://www.corel.com/en/products/corel-painter/" target="_blank">Corel Painter</a> – Professional painting software with realistic brush simulation.
-    </p>
-
-    <p>
-        • <a href="https://www.autodesk.com/products/sketchbook" target="_blank">Autodesk SketchBook</a> – Simple, beginner-friendly sketching program.
-    </p>
-
-    <h2>Digital Art Tools</h2>
-
-    <img src="https://i5.walmartimages.com/seo/BOSTO-12HD-A-Graphics-Drawing-Tablet-Monitor-Interactive-Stylus-Pen-Tilt-Function-11-6inch-H-IPS-1366x768-Display-8192-Pressure-Level-Passive-Windows_a73ba660-cf6e-443e-a1a1-3cd570f1a55e.ee816f304065cfba65c9827062a9c243.jpeg?odnHeight=2000&odnWidth=2000&odnBg=FFFFFF" 
-         alt="Graphic tablet used for digital art">
-
-
-    <img src="https://procreate-assets-cdn.procreate.com/_nuxt/home_16_9.DeXkI7ji.jpg" 
-         alt="IPad with Procreate software showing digital art">
- 
-    <p>
-        Most digital artists use a <strong>graphic tablet</strong> or tablet device 
-        paired with professional software to simulate real brushes and pens digitally.
-    </p>
-
-    <h2>Where to Share Your Digital Art</h2>
-
-    <p><strong>Mainstream Social Media Platforms:</strong></p>
-
-    <p>
-        • <a href="https://www.instagram.com/" target="_blank">Instagram</a> – Great for visual portfolios and short reels.<br>
-        • <a href="https://www.tiktok.com/" target="_blank">TikTok</a> – Popular for speedpaints and art process videos.<br>
-        • <a href="https://twitter.com/" target="_blank">Twitter (X)</a> – Widely used by artists for community engagement.<br>
-        • <a href="https://bsky.app/" target="_blank">Bluesky</a> – Growing platform with a strong art community.<br>
-        • <a href="https://www.tumblr.com" target="_blank">Tumblr</a> – Good for sharing art, sketches, and fandom-style creative work.<br>
-        • <a href="https://www.pinterest.com" target="_blank">Pinterest</a> – Excellent for inspiration boards and saving visual portfolio pieces.<br>
-        • <a href="https://www.youtube.com" target="_blank">YouTube</a> – Ideal for posting speedpaints, tutorials, and art process videos..
-
-    </p>
-
-    <p><strong>Dedicated Art Communities:</strong></p>
-
-    <p>
-        • <a href="https://www.deviantart.com/" target="_blank">DeviantArt</a> – Long-standing digital art community.<br>
-        • <a href="https://www.artstation.com/" target="_blank">ArtStation</a> – Professional portfolio platform for concept artists and illustrators.<br>
-        • <a href="https://www.behance.net/" target="_blank">Behance</a> – Creative showcase platform by Adobe.<br>
-        • <a href="https://www.pixiv.net/en/" target="_blank">Pixiv</a> – Popular among anime and manga artists.<br>
-        • <a href="https://www.newgrounds.com/" target="_blank">Newgrounds</a> – Creative community for artists and animators.
-    </p>
-
-    <h2>Join the Digital Art Community</h2>
-
-    <form action="#" method="post">
-
-        <label for="name">Full Name:</label>
-        <input type="text" id="name" name="name" placeholder="Enter your name" required>
-
-        <label for="email">Email Address:</label>
-        <input type="email" id="email" name="email" placeholder="example@email.com" required>
-
-        <label for="password">Create Password:</label>
-        <input type="password" id="password" name="password" minlength="6" required>
-
-        <label for="experience">Years of Experience (0-50):</label>
-        <input type="number" id="experience" name="experience" min="0" max="50">
-
-        <p>Skill Level:</p>
-        <input type="radio" name="level" value="beginner" required> Beginner<br>
-        <input type="radio" name="level" value="intermediate"> Intermediate<br>
-        <input type="radio" name="level" value="advanced"> Advanced<br>
-        <input type="radio" name="level" value="expert"> Expert<br><br>
-
-        <p>Software You Use:</p>
-        <input type="checkbox" name="software" value="procreate"> Procreate<br>
-        <input type="checkbox" name="software" value="photoshop"> Photoshop<br>
-        <input type="checkbox" name="software" value="clip-studio"> Clip Studio Paint<br>
-        <input type="checkbox" name="software" value="krita"> Krita<br>
-        <input type="checkbox" name="software" value="gimp"> GIMP<br>
-        <input type="checkbox" name="software" value="sketchbook"> Autodesk SketchBook<br>
-        <input type="checkbox" name="software" value="corel"> Corel Painter<br>
-      
-        <p>Platforms You Use:</p>
-        <input type="checkbox" name="platform" value="instagram"> Instagram<br>
-        <input type="checkbox" name="platform" value="tiktok"> TikTok<br>
-        <input type="checkbox" name="platform" value="twitter"> Twitter/X<br>
-        <input type="checkbox" name="platform" value="bluesky"> Bluesky<br>
-        <input type="checkbox" name="platform" value="youtube"> YouTube<br>
-        <input type="checkbox" name="platform" value="tumblr"> Tumblr<br>
-        <input type="checkbox" name="platform" value="pinterest"> Pinterest<br>
-        <input type="checkbox" name="platform" value="pixiv"> Pixiv<br>
-        <input type="checkbox" name="platform" value="newgrounds"> Newgrounds<br>
-        <input type="checkbox" name="platform" value="behance"> Behance<br>
-        <input type="checkbox" name="platform" value="deviantart"> DeviantArt<br>
-        <input type="checkbox" name="platform" value="artstation"> ArtStation<br><br>
-
-        <p>Other Software You Use (Optional):</p>
-        <input type="text" name="other_software" placeholder="Type other software here">
-
-        <p>Other Platforms You Use (Optional):</p>
-        <input type="text" name="other_platforms" placeholder="Type other platforms here">
-
-        <input type="submit" value="Submit">
-
-    </form>
 
 </body>
 </html>

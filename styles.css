@@ -1,0 +1,134 @@
+/* =====================================
+   MASTER STYLESHEET - FINAL FIX VERSION
+   ===================================== */
+
+/* Reset */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* Body Background */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(to bottom, #f4f6f9, #dfe8dc);
+    color: #333;
+    line-height: 1.6;
+    text-align: center;
+}
+
+/* Navigation */
+nav {
+    background-color: #376b2a;
+    padding: 15px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+    color: #cce7c2;
+}
+
+/* Header */
+header {
+    background: linear-gradient(to right, #376b2a, #70b45f);
+    color: white;
+    padding: 50px 20px;
+}
+
+/* Main Content Container */
+main.content {
+    background: white;
+    width: 85%;
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* Typography */
+.content h2 {
+    color: #376b2a;
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+}
+
+.content p {
+    margin-bottom: 15px;
+    font-size: 1rem;
+}
+
+/* Images */
+.content img {
+    width: 300px;
+    max-width: 100%;
+    display: block;
+    margin: 30px auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* Forms */
+form {
+    background-color: #f8f8f8;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+input, select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 12px;
+}
+
+input[type="submit"] {
+    background-color: #70b45f;
+    border: none;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #376b2a;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #343a40;
+    color: white;
+    margin-top: 40px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    main.content {
+        width: 95%;
+        padding: 20px;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.6rem;
+    }
+
+    .content img {
+        width: 100%;
+    }
+}

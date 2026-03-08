@@ -1,28 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    
-    <!-- Navigation structure inspired by common multi-page website layouts -->
-<nav style="background:#376b2a; padding:12px;">
-    <a href="index.html" style="color:white; margin-right:20px;">Home</a>
-    <a href="software.html" style="color:white; margin-right:20px;">Software & Tools</a>
-    <a href="platform.html" style="color:white; margin-right:20px;">Platforms</a>
-    <a href="community.html" style="color:white;">Join the Community</a>
-</nav>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to Digital Art</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
-
 </head>
-
 <body>
 
+<nav class="main-nav">
+    <a href="index.html">Home</a>
+    <a href="software.html">Software & Tools</a>
+    <a href="platform.html">Platforms</a>
+    <a href="community.html">Join the Community</a>
+</nav>
 
+<header>
     <h1>Introduction to Digital Art</h1>
+</header>
 
-<section class="content">
+<main class="content fade-in">
     <img src="https://cdn.mos.cms.futurecdn.net/V9mhxs7dovfyY8WXTCUQdJ-650-80.jpg.webp" 
          alt="Example of digital painting">
-</section>
 
     <p>
         <strong>Digital art</strong> is artwork created using digital technology 
@@ -34,6 +33,30 @@
         Many creators love digital art because it is <em>flexible, efficient,</em> 
         and constantly evolving. With the right tools, <u>anyone can begin creating</u>.
     </p>
+</main>
+
+<footer>
+    <p>© 2026 Digital Art Introduction</p>
+</footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const elements = document.querySelectorAll(".fade-in");
+
+    function checkVisibility() {
+        elements.forEach(el => {
+            const rect = el.getBoundingClientRect();
+            if (rect.top < window.innerHeight - 100) {
+                el.classList.add("visible");
+            }
+        });
+    }
+
+    window.addEventListener("scroll", checkVisibility);
+    checkVisibility();
+});
+</script>
 
 </body>
 </html>
+

@@ -68,5 +68,43 @@
 
     </form>
 
+    <!-- Scroll animation script sourced from https://developer.mozilla.org/en-US/docs/Web/JavaScript -->
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const elements = document.querySelectorAll(".fade-in");
+
+    function checkVisibility() {
+        elements.forEach(el => {
+            const rect = el.getBoundingClientRect();
+            if (rect.top < window.innerHeight - 100) {
+                el.classList.add("visible");
+            }
+        });
+    }
+
+    window.addEventListener("scroll", checkVisibility);
+    checkVisibility();
+});
+</script>
+
+<!-- Scroll animation script sourced from https://developer.mozilla.org/en-US/docs/Web/JavaScript -->
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const elements = document.querySelectorAll(".fade-in");
+
+    function checkVisibility() {
+        elements.forEach(el => {
+            const rect = el.getBoundingClientRect();
+            if (rect.top < window.innerHeight - 100) {
+                el.classList.add("visible");
+            }
+        });
+    }
+
+    window.addEventListener("scroll", checkVisibility);
+    checkVisibility();
+});
+</script>
+
 </body>
 </html>

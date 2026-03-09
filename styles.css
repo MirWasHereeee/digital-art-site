@@ -1,149 +1,287 @@
-/* Navigation */
-nav {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 1rem;
-    background-color: #376b2a;
-    padding: 15px;
+/*
+  styles.css
+  - Ensures consistent typography, spacing, and colors across the site.
+  - Uses flexbox and responsive media queries for layout.
+  - Demonstrates the CSS box model with padding, borders, and margins.
+  - Implements absolute positioning for badge overlay.
+  - Attribution: Inspired by W3Schools (flexbox/box model) and MDN layout patterns.
+*/
+
+/* ===== Global box model reset ===== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-nav a {
-    color: white;
-    text-decoration: none;
-    margin: 0 15px;
-    font-weight: bold;
-    display: inline-block;
-    transition: transform 0.25s ease, color 0.25s ease;
+:root {
+  --bg: #f4f6f9;
+  --bg-alt: #ffffff;
+  --text: #2a2a2a;
+  --muted: #5a5a5a;
+  --primary: #376b2a;
+  --primary-light: #70b45f;
+  --accent: #cce7c2;
+  --border: rgba(0, 0, 0, 0.08);
+  --radius: 12px;
+  --max-width: 960px;
+  --spacing: 1rem;
+  --shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+  --font: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
-nav a:hover {
-    transform: scale(1.05);
-    color: #cce7c2;
+/* ===== Base page styling ===== */
+html,
+body {
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font);
+  font-size: 16px;
+  color: var(--text);
+  background: linear-gradient(180deg, var(--bg), #dfe8dc);
+  background-attachment: fixed;
+  line-height: 1.6;
+  text-align: center;
+  transition: opacity 0.35s ease, transform 0.35s ease;
 }
 
-/* Scroll animation */
+/* Page transition: fade-out + slide left before navigation */
+body.fade-out,
+body.page-exit {
+  opacity: 0;
+  transform: translateX(-12px);
+}
+
+/* Page transition: slide in on arrival */
+body.page-enter {
+  opacity: 0;
+  transform: translateX(12px);
+}
+
+/* Ensure images never overflow their containers */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Fade-in animation for boxes and images */
 .fade-in {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
 .fade-in.visible {
-    opacity: 1;
-    transform: translateY(0);
+  opacity: 1;
+  transform: translateY(0);
 }
 
-/* Reset */
-html, body {
-    min-height: 100vh;
-    margin: 0;
-    padding: 0;
+/* Constrain images inside grid layouts (keeps them from getting too large) */
+.image-grid img {
+  max-width: 420px;
+  width: 100%;
+  height: auto;
 }
 
-/* Body Background */
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: linear-gradient(to bottom, #f4f6f9, #dfe8dc);
-    background-attachment: fixed;
-    color: #333;
-    line-height: 1.6;
-    text-align: center;
+/* Container for centering content with box model padding */
+.container {
+  width: min(var(--max-width), 90%);
+  margin: 0 auto;
+  padding: 0 var(--spacing);
 }
 
-/* Header */
+/* ===== Navigation (flexbox, consistent spacing) ===== */
+nav.main-nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  background: var(--primary);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+nav.main-nav a {
+  color: #fff;
+  text-decoration: none;
+  padding: 0.5rem 0.75rem;
+  border-radius: 999px;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  font-weight: 600;
+}
+
+nav.main-nav a:hover,
+nav.main-nav a:focus-visible {
+  background-color: rgba(255, 255, 255, 0.15);
+  transform: translateY(-1px);
+  outline: none;
+}
+
+/* ===== Header (box model + absolute positioning example) ===== */
 header {
-    background: linear-gradient(to right, #376b2a, #70b45f);
-    color: white;
-    padding: 50px 20px;
+  background: linear-gradient(90deg, var(--primary), var(--primary-light));
+  color: #fff;
+  padding: 5rem 1rem 3rem;
+  position: relative;
+  overflow: hidden;
 }
 
-/* Main Content Container */
+header h1 {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+/* Absolute-positioned badge overlay (advanced positioning) */
+.header-badge {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  font-size: 0.9rem;
+}
+
+/* ===== Main layout (flexbox + box model) ===== */
 main.content {
-    background: white;
-    width: 85%;
-    max-width: 900px;
-    margin: 40px auto;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  padding: 3rem 0;
 }
 
-/* Typography */
-.content h2 {
-    color: #376b2a;
-    margin-bottom: 15px;
-    font-size: 1.8rem;
+.main-card {
+  flex: 1 1 320px;
+  max-width: 520px;
+  background: var(--bg-alt);
+  padding: 2rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  text-align: left;
 }
 
-.content p {
-    margin-bottom: 15px;
-    font-size: 1rem;
+.image-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
 }
 
-/* Images */
-.content img {
-    width: 300px;
-    max-width: 100%;
-    display: block;
-    margin: 30px auto;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+.main-card h2 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  color: var(--primary);
 }
 
-/* Forms */
+.main-card p {
+  margin: 0 0 1rem;
+  color: var(--muted);
+}
+
+/* ===== Buttons + links ===== */
+button,
+input[type="submit"],
+a.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.2rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 999px;
+  background: var(--primary);
+  color: #fff;
+  cursor: pointer;
+  font-weight: 600;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+button:hover,
+input[type="submit"]:hover,
+a.button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+}
+
+button:active,
+input[type="submit"]:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+/* ===== Form elements ===== */
 form {
-    background-color: #f8f8f8;
-    padding: 20px;
-    border-radius: 10px;
-    margin-top: 20px;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-input, select {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 12px;
+form label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
 }
 
-input[type="submit"] {
-    background-color: #70b45f;
-    border: none;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 0.75rem 0.85rem;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 0.75rem;
+  margin-bottom: 1rem;
+  font-family: inherit;
+  font-size: 1rem;
 }
 
-input[type="submit"]:hover {
-    background-color: #376b2a;
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 3px solid rgba(55, 107, 42, 0.35);
 }
 
-/* Footer */
+/* ===== Footer ===== */
 footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #343a40;
-    color: white;
-    margin-top: 40px;
+  background: #2a2a2a;
+  color: #f1f1f1;
+  padding: 2rem 1rem;
+  text-align: center;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    main.content {
-        width: 95%;
-        padding: 20px;
-    }
-
-    header h1 {
-        font-size: 2rem;
-    }
+footer small {
+  display: block;
+  opacity: 0.8;
 }
 
-@media (max-width: 480px) {
-    header h1 {
-        font-size: 1.6rem;
-    }
+/* ===== Responsive breakpoints ===== */
+@media (max-width: 900px) {
+  main.content {
+    flex-direction: column;
+    align-items: center;
+  }
+}
 
-    .content img {
-        width: 100%;
-    }
+@media (max-width: 600px) {
+  header {
+    padding: 4rem 0 2.5rem;
+  }
+
+  .header-badge {
+    top: auto;
+    bottom: 1rem;
+    right: 1rem;
+  }
+
+  nav.main-nav {
+    gap: 0.5rem;
+  }
 }

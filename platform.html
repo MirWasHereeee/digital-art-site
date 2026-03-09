@@ -1,48 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Art Platforms</title>
 
-    <!-- Navigation structure inspired by common multi-page website layouts -->
-<nav style="background:#376b2a; padding:12px;">
-    <a href="index.html" style="color:white; margin-right:20px;">Home</a>
-    <a href="software.html" style="color:white; margin-right:20px;">Software & Tools</a>
-    <a href="platform.html" style="color:white; margin-right:20px;">Platforms</a>
-    <a href="community.html" style="color:white;">Join the Community</a>
+    <!-- Attribution: Layout inspired by W3Schools flexbox and MDN box model guides -->
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body class="page-enter">
+
+<nav class="main-nav">
+    <a href="index.html">Home</a>
+    <a href="software.html">Software & Tools</a>
+    <a href="platform.html">Platforms</a>
+    <a href="community.html">Join the Community</a>
 </nav>
 
-    <link rel="stylesheet" type="text/css" href="styles.css">
+<header>
+    <h1>Digital Art Platforms</h1>
+    <div class="header-badge">Browse services where artists share & sell work</div>
+</header>
 
-</head>
-    <h2>Where to Share Your Digital Art</h2>
+<main class="content">
+    <section class="main-card fade-in">
+        <h2>Where to Share Your Art</h2>
+        <p>These platforms help you showcase your work, connect with fans, and even earn money.</p>
+        <ul>
+            <li><a href="https://www.artstation.com/" target="_blank" rel="noopener">ArtStation</a> – A popular portfolio site for professional artists.</li>
+            <li><a href="https://www.deviantart.com/" target="_blank" rel="noopener">DeviantArt</a> – Large community with forums and galleries.</li>
+            <li><a href="https://www.behance.net/" target="_blank" rel="noopener">Behance</a> – Showcase creative projects and get discovered.</li>
+            <li><a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a> – A social platform with a strong visual focus.</li>
+            <li><a href="https://www.patreon.com/" target="_blank" rel="noopener">Patreon</a> – Support your work via monthly subscriptions.</li>
+            <li><a href="https://www.etsy.com/" target="_blank" rel="noopener">Etsy</a> – Great for selling prints and custom art.</li>
+        </ul>
+    </section>
 
-    <p><strong>Mainstream Social Media Platforms:</strong></p>
+    <section class="main-card fade-in">
+        <h2>Tips for Posting</h2>
+        <ul>
+            <li>Use consistent branding (same username, cover images, etc.).</li>
+            <li>Write short captions explaining your creative process.</li>
+            <li>Engage with others: like/comment/share to build a network.</li>
+            <li>Post regularly—consistency helps you grow over time.</li>
+        </ul>
+    </section>
+</main>
 
-    <p>
-        • <a href="https://www.instagram.com/" target="_blank">Instagram</a> – Great for visual portfolios and short reels.<br>
-        • <a href="https://www.tiktok.com/" target="_blank">TikTok</a> – Popular for speedpaints and art process videos.<br>
-        • <a href="https://twitter.com/" target="_blank">Twitter (X)</a> – Widely used by artists for community engagement.<br>
-        • <a href="https://bsky.app/" target="_blank">Bluesky</a> – Growing platform with a strong art community.<br>
-        • <a href="https://www.tumblr.com" target="_blank">Tumblr</a> – Good for sharing art, sketches, and fandom-style creative work.<br>
-        • <a href="https://www.pinterest.com" target="_blank">Pinterest</a> – Excellent for inspiration boards and saving visual portfolio pieces.<br>
-        • <a href="https://www.youtube.com" target="_blank">YouTube</a> – Ideal for posting speedpaints, tutorials, and art process videos..
+<footer>
+    <small>Designed with consistent layout, responsive flexbox, and modern CSS.</small>
+</footer>
 
-    </p>
-
-    <p><strong>Dedicated Art Communities:</strong></p>
-
-    <p>
-        • <a href="https://www.deviantart.com/" target="_blank">DeviantArt</a> – Long-standing digital art community.<br>
-        • <a href="https://www.artstation.com/" target="_blank">ArtStation</a> – Professional portfolio platform for concept artists and illustrators.<br>
-        • <a href="https://www.behance.net/" target="_blank">Behance</a> – Creative showcase platform by Adobe.<br>
-        • <a href="https://www.pixiv.net/en/" target="_blank">Pixiv</a> – Popular among anime and manga artists.<br>
-        • <a href="https://www.newgrounds.com/" target="_blank">Newgrounds</a> – Creative community for artists and animators.
-    </p>
-
-    <!-- Scroll animation script sourced from https://developer.mozilla.org/en-US/docs/Web/JavaScript -->
 <script>
+// Page transition + scroll reveal (source: MDN docs)
 document.addEventListener("DOMContentLoaded", function() {
-    const elements = document.querySelectorAll(".fade-in");
+    document.body.classList.remove('page-enter');
 
+    const elements = document.querySelectorAll(".fade-in");
     function checkVisibility() {
         elements.forEach(el => {
             const rect = el.getBoundingClientRect();
@@ -51,31 +65,30 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         });
     }
-
     window.addEventListener("scroll", checkVisibility);
     checkVisibility();
-});
-</script>
 
-<!-- Scroll animation script sourced from https://developer.mozilla.org/en-US/docs/Web/JavaScript -->
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-    const elements = document.querySelectorAll(".fade-in");
-
-    function checkVisibility() {
-        elements.forEach(el => {
-            const rect = el.getBoundingClientRect();
-            if (rect.top < window.innerHeight - 100) {
-                el.classList.add("visible");
-            }
+    const internalLinks = Array.from(document.querySelectorAll('a[href]'))
+        .filter(link => {
+            const url = link.getAttribute('href');
+            return url && !url.startsWith('http') && !url.startsWith('mailto:') && !url.startsWith('#');
         });
-    }
 
-    window.addEventListener("scroll", checkVisibility);
-    checkVisibility();
+    internalLinks.forEach(link => {
+        link.addEventListener('click', event => {
+            if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+            event.preventDefault();
+            document.body.classList.add('page-exit');
+            setTimeout(() => {
+                window.location = link.href;
+            }, 300);
+        });
+    });
 });
 </script>
 
 </body>
 </html>
+
+
 

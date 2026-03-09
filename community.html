@@ -1,76 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Art Cheats</title>
 
-    <!-- Navigation structure inspired by common multi-page website layouts -->
-<nav style="background:#376b2a; padding:12px;">
-    <a href="index.html" style="color:white; margin-right:20px;">Home</a>
-    <a href="software.html" style="color:white; margin-right:20px;">Software & Tools</a>
-    <a href="platform.html" style="color:white; margin-right:20px;">Platforms</a>
-    <a href="community.html" style="color:white;">Join the Community</a>
+    <!-- Attribution: Layout inspiration from W3Schools Flexbox + Box Model guides -->
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body class="page-enter">
+
+<nav class="main-nav">
+    <a href="index.html">Home</a>
+    <a href="software.html">Software & Tools</a>
+    <a href="platform.html">Platforms</a>
+    <a href="community.html">Join the Community</a>
 </nav>
 
-    <link rel="stylesheet" type="text/css" href="styles.css">
+<header>
+    <h1>Introduction to Digital Art</h1>
+    <div class="header-badge">Tip: Resize the window to see responsive layout</div>
+</header>
 
-</head>
-    <h2>Join the Digital Art Community</h2>
+<main class="content">
+    <div class="main-card fade-in">
+        <img src="https://cdn.mos.cms.futurecdn.net/V9mhxs7dovfyY8WXTCUQdJ-650-80.jpg.webp"
+             alt="Example of digital painting">
 
-    <form action="#" method="post">
+        <h2>Why Digital Art?</h2>
+        <p>
+            <strong>Digital art</strong> is artwork created using digital technology such as
+            tablets, styluses, and creative software. It allows artists to experiment
+            freely and refine their work in ways traditional media cannot.
+        </p>
 
-        <label for="name">Full Name:</label>
-        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+        <p>
+            Many creators love digital art because it is <em>flexible, efficient,</em> and
+            constantly evolving. With the right tools, <u>anyone can begin creating</u>.
+        </p>
 
-        <label for="email">Email Address:</label>
-        <input type="email" id="email" name="email" placeholder="example@email.com" required>
+        <a class="button" href="software.html">Explore Software</a>
+    </div>
 
-        <label for="password">Create Password:</label>
-        <input type="password" id="password" name="password" minlength="6" required>
+    <div class="main-card fade-in">
+        <h2>Stay Updated</h2>
+        <p>Subscribe to receive quick tips, free brushes, and workflow guides.</p>
 
-        <label for="experience">Years of Experience (0-50):</label>
-        <input type="number" id="experience" name="experience" min="0" max="50">
+        <form>
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="you@example.com" required>
 
-        <p>Skill Level:</p>
-        <input type="radio" name="level" value="beginner" required> Beginner<br>
-        <input type="radio" name="level" value="intermediate"> Intermediate<br>
-        <input type="radio" name="level" value="advanced"> Advanced<br>
-        <input type="radio" name="level" value="expert"> Expert<br><br>
+            <input type="submit" value="Subscribe">
+        </form>
 
-        <p>Software You Use:</p>
-        <input type="checkbox" name="software" value="procreate"> Procreate<br>
-        <input type="checkbox" name="software" value="photoshop"> Photoshop<br>
-        <input type="checkbox" name="software" value="clip-studio"> Clip Studio Paint<br>
-        <input type="checkbox" name="software" value="krita"> Krita<br>
-        <input type="checkbox" name="software" value="gimp"> GIMP<br>
-        <input type="checkbox" name="software" value="sketchbook"> Autodesk SketchBook<br>
-        <input type="checkbox" name="software" value="corel"> Corel Painter<br>
-      
-        <p>Platforms You Use:</p>
-        <input type="checkbox" name="platform" value="instagram"> Instagram<br>
-        <input type="checkbox" name="platform" value="tiktok"> TikTok<br>
-        <input type="checkbox" name="platform" value="twitter"> Twitter/X<br>
-        <input type="checkbox" name="platform" value="bluesky"> Bluesky<br>
-        <input type="checkbox" name="platform" value="youtube"> YouTube<br>
-        <input type="checkbox" name="platform" value="tumblr"> Tumblr<br>
-        <input type="checkbox" name="platform" value="pinterest"> Pinterest<br>
-        <input type="checkbox" name="platform" value="pixiv"> Pixiv<br>
-        <input type="checkbox" name="platform" value="newgrounds"> Newgrounds<br>
-        <input type="checkbox" name="platform" value="behance"> Behance<br>
-        <input type="checkbox" name="platform" value="deviantart"> DeviantArt<br>
-        <input type="checkbox" name="platform" value="artstation"> ArtStation<br><br>
+       
+    </div>
+</main>
 
-        <p>Other Software You Use (Optional):</p>
-        <input type="text" name="other_software" placeholder="Type other software here">
+<footer>
+    <small>Designed with consistent layout, responsive flexbox, and modern CSS.</small>
+</footer>
 
-        <p>Other Platforms You Use (Optional):</p>
-        <input type="text" name="other_platforms" placeholder="Type other platforms here">
-
-        <input type="submit" value="Submit">
-
-    </form>
-
-    <!-- Scroll animation script sourced from https://developer.mozilla.org/en-US/docs/Web/JavaScript -->
 <script>
+// Page transition + scroll reveal (source: MDN docs)
 document.addEventListener("DOMContentLoaded", function() {
+    // Fade-in / slide-in on page load
+    document.body.classList.remove('page-enter');
+
+    // Scroll reveal for fade-in elements
     const elements = document.querySelectorAll(".fade-in");
 
     function checkVisibility() {
@@ -84,25 +81,24 @@ document.addEventListener("DOMContentLoaded", function() {
 
     window.addEventListener("scroll", checkVisibility);
     checkVisibility();
-});
-</script>
 
-<!-- Scroll animation script sourced from https://developer.mozilla.org/en-US/docs/Web/JavaScript -->
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-    const elements = document.querySelectorAll(".fade-in");
-
-    function checkVisibility() {
-        elements.forEach(el => {
-            const rect = el.getBoundingClientRect();
-            if (rect.top < window.innerHeight - 100) {
-                el.classList.add("visible");
-            }
+    // Fade-out on internal navigation
+    const internalLinks = Array.from(document.querySelectorAll('a[href]'))
+        .filter(link => {
+            const url = link.getAttribute('href');
+            return url && !url.startsWith('http') && !url.startsWith('mailto:') && !url.startsWith('#');
         });
-    }
 
-    window.addEventListener("scroll", checkVisibility);
-    checkVisibility();
+    internalLinks.forEach(link => {
+        link.addEventListener('click', event => {
+            if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return; // allow new-tab
+            event.preventDefault();
+            document.body.classList.add('page-exit');
+            setTimeout(() => {
+                window.location = link.href;
+            }, 300);
+        });
+    });
 });
 </script>
 
